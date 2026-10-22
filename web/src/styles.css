@@ -11,7 +11,20 @@ body,
   min-height: 100%;
 }
 
-body {
+html,body {
   margin: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-family: "Satoshi";
+  @apply  dark:bg-black dark:text-white not-dark:bg-gray-100 not-dark:text-black;
+  touch-action: pan-x pan-y;
 }
 
+
+@utility text-special {
+    @apply bg-clip-text text-transparent bg-transparent bg-linear-to-r from-violet-400 via-pink-700 to-purple-200;
+  }
+
+@utility login-signup-btn{
+  @apply bg-white text-black rounded-full px-14 py-0.5 w-fit mx-auto active:bg-gray-300 cursor-pointer text-base font-extrabold
+}

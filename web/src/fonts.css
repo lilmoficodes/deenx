@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@theme{
+    --font-satoshi : "Satoshi"
+}
+@font-face {
+    font-family: "Satoshi";
+    src: url("/_satoshi_k9ut_i_reg.otf") format("opentype");
+    font-weight: 400;
+    font-display: swap;
+}
