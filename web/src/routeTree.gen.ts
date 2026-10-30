@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginRouteRouteImport } from './routes/login/route'
 import { Route as SignupRouteRouteImport } from './routes/signup/route'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRouteRoute = LoginRouteRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SignupRouteRoute = SignupRouteRouteImport.update({
@@ -25,27 +31,31 @@ const SignupRouteRoute = SignupRouteRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/login': typeof LoginRouteRoute
   '/signup': typeof SignupRouteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRouteRoute
   '/signup': typeof SignupRouteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/login': typeof LoginRouteRoute
   '/signup': typeof SignupRouteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/signup'
+  fullPaths: '/' | '/login' | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/signup'
-  id: '__root__' | '/' | '/signup'
+  to: '/' | '/login' | '/signup'
+  id: '__root__' | '/' | '/login' | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LoginRouteRoute: typeof LoginRouteRoute
   SignupRouteRoute: typeof SignupRouteRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/solid-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/signup': {
@@ -70,6 +87,7 @@ declare module '@tanstack/solid-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LoginRouteRoute: LoginRouteRoute,
   SignupRouteRoute: SignupRouteRoute,
 }
 export const routeTree = rootRouteImport

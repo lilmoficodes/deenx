@@ -26,5 +26,5 @@ html,body {
   }
 
 @utility login-signup-btn{
-  @apply bg-white text-black rounded-full px-14 py-0.5 w-fit mx-auto active:bg-gray-300 cursor-pointer text-base font-extrabold
+  @apply dark:bg-white dark:text-black w-fit mx-auto rounded-full px-12 py-0.5  active:bg-gray-300 cursor-pointer text-base font-extrabold
 }

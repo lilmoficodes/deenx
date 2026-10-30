@@ -1,12 +1,11 @@
 import { createFileRoute } from '@tanstack/solid-router'
-import LoginBeforeAuth from '../components/beforeAuth/login'
-
+import Feeds from '../components/feeds/feeds'
 export const Route = createFileRoute('/')({ component: Home,
   head : ()=>(
     {
       meta : [
         {
-          title : "Home | DeenX",
+          title : "Home | DeenX | Explore Posts & Feeds ",
         },
         {
            name : "description",
@@ -20,7 +19,7 @@ export const Route = createFileRoute('/')({ component: Home,
 function Home() {
   return (
     <>
-    <LoginBeforeAuth/>
+    <Feeds/>
     </>
   )
 }
