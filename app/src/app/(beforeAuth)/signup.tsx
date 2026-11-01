@@ -1,10 +1,8 @@
 import { View, Text } from 'react-native'
-import React from 'react'
-
 const signup = () => {
   return (
     <View>
-      <Text>sinup</Text>
+      <Text>hello</Text>
     </View>
   )
 }

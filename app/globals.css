@@ -4,7 +4,11 @@
 
 @import "nativewind/theme";
 @theme {
-    --font-satoshi : Satoshi;
-    --font-neue : Neue;
-    --font-uthmani : Uthmani;
+    --font-satoshi : "Satoshi";
+    --font-neue : "Neue";
+    --font-uthmani : "Uthmani";
+}
+@utility theme-utility {
+    @apply dark:bg-neutral-950 not-dark:bg-neutral-200 dark:text-white not-dark:text-black
+     not-dark:border-neutral-300 dark:border-white/10;
 }

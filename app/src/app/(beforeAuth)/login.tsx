@@ -33,7 +33,7 @@ export default function Index() {
                     </Text>
                     <TextInput className="w-full border-b border-neutral-700 dark:text-white not-dark:text-black" placeholder="Enter your password" placeholderTextColor={theme === "dark" ? "#888" : "#777"} />
                     <View className="items-center mt-5">
-                        <Text>
+                        <Text className="font-sans">
                             Didn't have an account?{" "}<Link href={"/signup"} className="underline">Signup</Link>
                         </Text>
                     </View>
